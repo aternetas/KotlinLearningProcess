@@ -22,9 +22,10 @@ class User(
     companion object Factory {
         private var lastId: Int = 1000
         fun makeUser(fullName: String): User{
+            //exception
             lastId++
 
-            val parts: List<String> = fullName.split("")
+            val parts: List<String> = fullName.split(" ")
             val firstName = parts[0]
             val lastName = parts[1]
             return User(id = lastId, firstName, lastName)
