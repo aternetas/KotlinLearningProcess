@@ -8,10 +8,16 @@ object Utils {
         return firstName to lastName
     }
 
+    fun convertFirstAndLastNameToInitials(firstName: String, lastName: String): String{
+        val i1 = firstName[0].toString()
+        val i2 = lastName[0].toString()
+        return ("$i1$i2.").uppercase()
+    }
+
     fun convertFullNameToInitials(fullName: String): String{
         var pairs: Pair<String, String> = parseFullName(fullName)
         val i1 = pairs.first[0].toString()
         val i2 = pairs.second[0].toString()
-        return (i1 + i2 + ".").uppercase()
+        return ("$i1$i2.").uppercase()
     }
 }
