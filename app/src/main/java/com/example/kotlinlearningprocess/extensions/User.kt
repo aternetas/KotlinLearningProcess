@@ -9,8 +9,7 @@ fun User.toUserView(user: User): UserView{
     val nickname = ""
     val status = if (isOnline) "Online"
                     else if (lastVisit == null) "This user has never been there"
-                    else "Offline"
-
+                    else "Last seen: ${lastVisit.countTimeIntervalUntilNow()}"
 
     return UserView(
         id = id,
